@@ -63,4 +63,23 @@ bool isSortDecreasing(int values[], int size) {
 	}
 
 	return decreasing;
+
 }
+
+bool hasAdjacentDuplicates(int values[], int size) {
+
+	bool adjacent = false;
+
+	for (int i = 0; i < size - 1; i++) {
+
+		if (values[i] == values[i + 1]) {
+
+			adjacent = true;
+
+		}
+	}
+
+	return adjacent; 
+
+}
+
