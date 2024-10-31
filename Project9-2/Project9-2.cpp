@@ -31,6 +31,28 @@ int main() {
 			cout << "The data are increasing." << endl;
 
 		}
+		else {
+			cout << "The data are not increasing." << endl;
+		}
+
+		if (isSortedDecreasing(array, 6)) {
+			cout << "The data are not decreasing." << endl;
+			
+		}
+		else {
+			cout << "The data are decreasing" << endl;
+		}
+
+		if (hasAdjacentDuplicates(array, 6)) {
+			cout << "The data has adjacent duplicates" << endl;
+		}
+		else { cout << "The data does not have adjacent duplicates" << endl; }
+
+		if (hasDuplicates(array, 6)) {
+			cout << "The data has duplicates" << endl;
+		}
+		else { cout << "The data does not have duplicates" << endl; }
+
 	
 
 
@@ -49,13 +71,13 @@ bool isSortedIncreasing(int value[], int size) {
 	return increase;
 }
 
-bool isSortDecreasing(int values[], int size) {
+bool isSortedDecreasing(int values[], int size) {
 
 	bool decreasing = true;
 
-	for (int i = size - 1; i > 0; i--) {
+	for (int i = 0; i < size-1; i++) {
 		
-		if (values[i] < values[i - 1]) {
+		if (values[i] > values[i + 1]) {
 
 			decreasing = false;
 
@@ -83,3 +105,19 @@ bool hasAdjacentDuplicates(int values[], int size) {
 
 }
 
+bool hasDuplicates(int values[], int size) {
+
+	bool duplicates = false;
+
+	for (int i = 0; i < size - 1; i++) {
+
+		for (int c = i+1; c < size - 1; c++) {
+
+			if (values[i] == values[c]) {
+				duplicates = true;
+			}
+		}
+	}
+
+	return duplicates;
+}
