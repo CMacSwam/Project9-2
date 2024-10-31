@@ -4,7 +4,9 @@
 using namespace std;
 
 bool isSortedIncreasing(int values[], int size);
-
+bool isSortedDecreasing(int values[], int size);
+bool hasAdjacentDuplicates(int values[], int size);
+bool hasDuplicates(int values[], int size);
 
 int main() {
 	int a, b, c, d, e, f;
@@ -45,4 +47,20 @@ bool isSortedIncreasing(int value[], int size) {
 	}
 
 	return increase;
+}
+
+bool isSortDecreasing(int values[], int size) {
+
+	bool decreasing = true;
+
+	for (int i = size - 1; i > 0; i--) {
+		
+		if (values[i] < values[i - 1]) {
+
+			decreasing = false;
+
+		}
+	}
+
+	return decreasing;
 }
